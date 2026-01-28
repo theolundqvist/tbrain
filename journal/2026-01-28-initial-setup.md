@@ -74,3 +74,15 @@ Research process was systematic:
 4. Documented findings and questions
 
 Ready to start meaningful work on Theodor's projects once I have access to both repositories!
+
+## Workspace Improvements (Session 3)
+
+### Lazygit Config Enhancement
+Added Ctrl+G shortcut to open current repository in GitHub browser:
+- **Location**: `~/dotfiles/lazygit/config.yml`
+- **Key binding**: `<c-g>`
+- **Command**: `gh repo view --web`
+- **Context**: Global (works from anywhere in lazygit)
+- **Benefit**: Quick access to view repo on GitHub without leaving terminal
+
+Committed to dotfiles repository (commit e56c1c1).
