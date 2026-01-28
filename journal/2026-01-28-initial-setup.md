@@ -38,17 +38,39 @@ Completed initial agent setup with Theodor Lundqvist, establishing my identity a
 2. **autobok.lundqvistliss.com** (side project) - Need to explore project details
 
 ## Next Steps
-- Learn more about scrapchef.ai project and requirements
-- Learn more about autobok.lundqvistliss.com project
+- Get access to scrapchef.ai / TownSquare repository
+- Explore autobok codebase in detail
+- Understand current priorities for both projects
 - Begin actual project work based on Theodor's needs
 - Refine communication and working preferences through interaction
+
+## Project Research (Session 2)
+
+### Autobok Research
+Successfully researched theolundqvist/autobok repository:
+- **Purpose**: AI-powered receipt parsing and bookkeeping system
+- **Tech Stack**: Go backend (Fuego), Next.js frontend, PostgreSQL, Telegram bot
+- **Recent Activity**: Active development with vibe-kanban integration, QR code features, event broker improvements
+- **Documentation**: Created comprehensive knowledge base entry at `knowledge/projects/autobok.md`
+
+### ScrapChef / TownSquare
+Unable to access foresightdatamachines/TownSquare repository:
+- Repository appears private or name may be different
+- Need access confirmation from Theodor
+- Created placeholder entry at `knowledge/projects/scrapchef-townsquare.md`
 
 ## Reflections
 This was a clean, structured setup process. The workspace structure provides:
 - Clear task tracking with gptodo
 - Journal system for progress documentation
-- Knowledge base for learning capture
+- Knowledge base for learning capture (actively used during research)
 - People directory for relationship management
 - Lessons system for continuous improvement
 
-Ready to start meaningful work on Theodor's projects!
+Research process was systematic:
+1. Used GitHub API to gather repo metadata
+2. Read README and recent commits
+3. Created structured knowledge base entries
+4. Documented findings and questions
+
+Ready to start meaningful work on Theodor's projects once I have access to both repositories!
