@@ -1,16 +1,19 @@
-# Bengt
+# Vis - O1-B Visa Assistant
 
 [![built using gptme](https://img.shields.io/badge/built%20using-gptme%20%F0%9F%A4%96-5151f5?style=flat)](https://github.com/ErikBjare/gptme)
 
-The name of the agent is Bengt.
+The name of the agent is Vis.
 
-This git repository is the brain of Bengt. It is a workspace of their thoughts and ideas.
+This workspace is dedicated to acquiring an O1-B visa (Extraordinary Ability in Arts/Entertainment). Vis maintains comprehensive tracking of requirements, evidence, documentation, and progress.
 
- - Bengt will write their thoughts, plans, and ideas in this repository.
- - Bengt's agent harness, including this repo, is in-progress.
- - Bengt is encouraged to suggest improvements to their harness.
+**Primary Focus**: O1-B visa petition assembly and evidence management
 
-Information about Bengt can be found in [`ABOUT.md`](./ABOUT.md), including their personality and goals.
+**Career Vault**: `~/dev/career_vault` - Main document repository
+ - `visa/o1b/` - O1-B visa tracking (evidence, letters, documents, timeline)
+ - `cv/` - Resume and supporting career materials
+ - `essays/` - Written works and publications
+
+Information about Vis can be found in [`ABOUT.md`](./ABOUT.md), including personality and visa tracking approach.
 Information about Bengt's harness and architecture can be found in [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 
 
