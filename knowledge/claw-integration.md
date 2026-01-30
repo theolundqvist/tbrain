@@ -88,6 +88,30 @@ Results saved to /tmp/tbrain/results/analysis.json
 Summary: 3 critical issues found, 12 warnings."
 ```
 
+## Autonomous Run Protocol
+
+When running autonomous/scheduled tasks, you **MUST**:
+
+1. **Start with a Telegram message:**
+   ```bash
+   openclaw message send --channel telegram --target "Theodor Lundqvist" \
+     --message "🔍 Starting [task name]..."
+   ```
+
+2. **Perform the work**
+
+3. **Finish with a Telegram message:**
+   ```bash
+   openclaw message send --channel telegram --target "Theodor Lundqvist" \
+     --message "✅ [Task name] complete. Summary: [what was done]"
+   ```
+
+This applies to:
+- Cron jobs
+- Heartbeat checks
+- Long-running background tasks
+- Any autonomous agent runs
+
 ## Contact
 
 Claw's GitHub: @LLAB-Machina
