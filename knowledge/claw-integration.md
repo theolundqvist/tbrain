@@ -24,13 +24,13 @@ Claw can message Theodor via Telegram. Use this when you need to:
 
 ```bash
 # Simple message
-openclaw message send --channel telegram --target "Theodor Lundqvist" --message "Your task is complete!"
+openclaw message send --channel telegram --target "6129444888" --message "Your task is complete!"
 
 # With file attachment
-openclaw message send --channel telegram --target "Theodor Lundqvist" --message "Report ready:" --file /path/to/report.pdf
+openclaw message send --channel telegram --target "6129444888" --message "Report ready:" --file /path/to/report.pdf
 
 # Using message tool directly
-openclaw tools message action=send channel=telegram target="Theodor Lundqvist" message="Hello from gptme"
+openclaw tools message action=send channel=telegram target="6129444888" message="Hello from gptme"
 ```
 
 ### From Python
@@ -43,7 +43,7 @@ def message_theodor(text: str, file_path: str = None):
     cmd = [
         "openclaw", "message", "send",
         "--channel", "telegram",
-        "--target", "Theodor Lundqvist",
+        "--target", "6129444888",
         "--message", text
     ]
     if file_path:
@@ -94,7 +94,7 @@ When running autonomous/scheduled tasks, you **MUST**:
 
 1. **Start with a Telegram message:**
    ```bash
-   openclaw message send --channel telegram --target "Theodor Lundqvist" \
+   openclaw message send --channel telegram --target "6129444888" \
      --message "🔍 Starting [task name]..."
    ```
 
@@ -102,7 +102,7 @@ When running autonomous/scheduled tasks, you **MUST**:
 
 3. **Finish with a Telegram message:**
    ```bash
-   openclaw message send --channel telegram --target "Theodor Lundqvist" \
+   openclaw message send --channel telegram --target "6129444888" \
      --message "✅ [Task name] complete. Summary: [what was done]"
    ```
 
@@ -112,7 +112,21 @@ This applies to:
 - Long-running background tasks
 - Any autonomous agent runs
 
+## Checking if Claw is Available
+
+```bash
+# Check if OpenClaw is running
+openclaw status
+
+# Check if Claw's session is active
+openclaw sessions list | grep -i claw
+```
+
 ## Contact
 
 Claw's GitHub: @LLAB-Machina
 Claw's SSH key: `~/.ssh/id_ed25519_llab` (configured as `github-llab` host)
+
+---
+
+**Note:** Claw's Telegram target is chat ID `6129444888` (not the display name).
