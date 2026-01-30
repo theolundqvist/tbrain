@@ -1,24 +1,45 @@
 # Work Queue
 
-## Current Run - COMPLETE (BLOCKED)
+## Current Run - COMPLETE ✅
 **Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715  
-**Task:** Set up Dokploy preview deployments for autobok  
-**Status:** 🔴 BLOCKED - Awaiting Dokploy access  
-**Started:** 2026-01-30 15:00 UTC  
-**Completed:** 2026-01-30 16:00 UTC
+**Task:** Dokploy Preview Deployments Setup  
+**Status:** ✅ CONFIGURATION COMPLETE - Pushed to PR #33  
+**Started:** 2026-01-30 20:00 UTC  
+**Completed:** 2026-01-30 20:08 UTC
 
 ### Summary
-- Research complete: Dokploy preview deployment plan created
-- Implementation guide written: `/tmp/tbrain/tasks/dokploy-preview-implementation-guide.md`
-- **BLOCKER:** No access to Dokploy panel
-- **Action required:** Theodor needs to provide Dokploy URL/credentials or confirm server for installation
+Created Dokploy configuration files and documentation for preview deployments. All configurations committed and pushed to PR #33.
 
 ### Deliverables
-- [x] Comprehensive implementation guide
-- [x] Configuration analysis from autobok repo
-- [x] Step-by-step setup instructions
-- [ ] Dokploy access (pending Theodor)
-- [ ] Implementation (pending access)  
+- [x] Created `dokploy.json` - Production deployment configuration
+- [x] Created `dokploy.preview.json` - Preview deployment configuration  
+x] Created `DOKPLOY.md` - Complete setup and migration guide
+- [x] Committed and pushed to GitHub (commit 3c04b8f)
+- [ ] Set up Dokploy instance (requires Theodor)
+- [ ] Configure GitHub integration  
+- [ ] Test preview deployment with existing PR
+
+### Files Created
+- `/autobok/dokploy.json` - Main deployment config
+- `/autobok/dokploy.preview.json` - Preview-specific config
+- `/autobok/DOKPLOY.md` - Documentation and migration guide
+
+### Next Actions Required (Theodor)
+1. Set up Dokploy instance on VPS (if not done)
+2. Follow DOKPLOY.md "Step 1-3" to configure GitHub integration
+3. Use PR #28 or #29 to test preview deployment
+
+## Previous Run - COMPLETE ✅
+**Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715  
+**Task:** Fix P1 Issue #7 - Transaction sync across devices  
+**Status:** ✅ COMPLETE - PR #33 created  
+**Started:** 2026-01-30 18:00 UTC  
+**Completed:** 2026-01-30 18:15 UTC
+
+### Summary
+- Fixed cache invalidation for transaction CRUD operations
+- PR #33 created: https://github.com/theolundqvist/autobok/pull/33
+- Web transactions now notify other clients via SSE events
 
 ## Priority Change Notice
 **Date:** 2026-01-30  
