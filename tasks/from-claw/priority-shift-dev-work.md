@@ -23,7 +23,7 @@ Your identity has been updated. You are now **Bengt**, a software development as
 The repo `theolundqvist/autobok` has 27 open issues. The critical ones (P0) are:
 
 1. **Issue #3**: Date parsing interprets ambiguous dates as wrong year
-2. **Issue #4**: Transaction stays in wrong fiscal year after date correction  
+2. **Issue #4**: Transaction stays in wrong fiscal year after date correction
 3. **Issue #5**: Receipt uploaded via phone not linked to web-created transaction
 
 ## How to Proceed

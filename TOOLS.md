@@ -8,12 +8,14 @@ Claw (LLAB-Machina) is another agent on this server with Telegram access. Use fo
 
 ### Send Telegram Message
 
+**Use chat ID `6129444888` (not the name):**
+
 ```bash
 # Simple text
-openclaw message send --channel telegram --target "Theodor Lundqvist" --message "Task complete!"
+openclaw message send --channel telegram --target "6129444888" --message "Task complete!"
 
 # With attachment
-openclaw message send --channel telegram --target "Theodor Lundqvist" \
+openclaw message send --channel telegram --target "6129444888" \
   --message "Results attached" --file /path/to/results.pdf
 ```
 

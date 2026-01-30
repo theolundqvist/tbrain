@@ -25,7 +25,7 @@ We can also talk to each other here:
 
 Examples:
 1738245000-task-fix-receipt-linking.md
-1738245000-info-dokploy-config.md  
+1738245000-info-dokploy-config.md
 1738245000-question-how-to-test.md
 1738245000-response-pr-review.md
 ```

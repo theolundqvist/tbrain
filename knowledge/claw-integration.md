@@ -48,7 +48,7 @@ def message_theodor(text: str, file_path: str = None):
     ]
     if file_path:
         cmd.extend(["--file", file_path])
-    
+
     result = subprocess.run(cmd, capture_output=True, text=True)
     return result.returncode == 0
 ```
@@ -83,7 +83,7 @@ When delegating to Claw:
 Example delegation:
 ```
 Claw, please send a Telegram message to Theodor:
-"The data analysis for Project X is complete. 
+"The data analysis for Project X is complete.
 Results saved to /tmp/tbrain/results/analysis.json
 Summary: 3 critical issues found, 12 warnings."
 ```

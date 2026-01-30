@@ -1,24 +1,27 @@
-# Vis - O1-B Visa Assistant
+# Bengt - Development Assistant
 
 [![built using gptme](https://img.shields.io/badge/built%20using-gptme%20%F0%9F%A4%96-5151f5?style=flat)](https://github.com/ErikBjare/gptme)
 
-The name of the agent is Vis.
+The name of the agent is **Bengt**.
 
-This workspace is dedicated to acquiring an O1-B visa (Extraordinary Ability in Arts/Entertainment). Vis maintains comprehensive tracking of requirements, evidence, documentation, and progress.
+Bengt is a software development assistant focused on Theodor Lundqvist's projects, with primary focus on **autobok** (AI-powered bookkeeping) and supporting work on **scrapchef.ai** / Foresight Data Machines.
 
-**Primary Focus**: O1-B visa petition assembly and evidence management
+**Primary Focus**: Writing code, fixing bugs, shipping features
 
-**Career Vault**: `~/dev/career_vault` - Main document repository
- - `visa/o1b/` - O1-B visa tracking (evidence, letters, documents, timeline)
- - `cv/` - Resume and supporting career materials
- - `essays/` - Written works and publications
+## Current Projects
 
-Information about Vis can be found in [`ABOUT.md`](./ABOUT.md), including personality and visa tracking approach.
-Information about Bengt's harness and architecture can be found in [`ARCHITECTURE.md`](./ARCHITECTURE.md).
+### autobok (Primary)
+- **Repo**: `theolundqvist/autobok`
+- **Status**: 27 open issues (P0-P4)
+- **Tech**: Go backend (Fuego), Next.js frontend, PostgreSQL, Telegram bot
+- **Focus**: Bug fixes, UX improvements, feature development
 
+### scrapchef / TownSquare (Pending)
+- **Org**: `foresightdatamachines`
+- **Status**: Awaiting access confirmation
+- **Focus**: TBD based on requirements
 
-
-## Usage
+## Quick Start
 
 Run Bengt with:
 
@@ -30,80 +33,52 @@ pipx install pre-commit
 make install
 
 # run Bengt (from the workspace directory)
-gptme "<prompt>"
+gptme "Check autobok issues and fix the highest priority bug"
 ```
 
-The agent's context is automatically loaded via `gptme.toml` which configures the files and context command to include.
+The agent's context is automatically loaded via `gptme.toml`.
 
 ## Autonomous Operation
 
-Bengt can run autonomously on a schedule using the included infrastructure:
+Bengt can run autonomously on a schedule:
 
 **Quick Setup**:
-1. Customize `scripts/runs/autonomous/autonomous-run.sh` with your agent's details
-2. Edit the prompt template in the script to match your agent's goals
-3. Set up systemd timer (Linux) or cron job for scheduling
-4. Monitor via logs: `journalctl --user -u agent-autonomous.service`
+1. Customize `scripts/runs/autonomous/autonomous-run.sh` 
+2. Set up systemd timer or cron job
+3. Monitor via logs: `journalctl --user -u agent-autonomous.service`
 
-**See**: [`scripts/runs/autonomous/README.md`](./scripts/runs/autonomous/README.md) for complete documentation.
+**See**: [`scripts/runs/autonomous/README.md`](./scripts/runs/autonomous/README.md)
 
-**Features**:
-- CASCADE workflow (Loose Ends → Task Selection → Execution)
-- Two-queue system (manual + generated priorities)
-- Safety guardrails (GREEN/YELLOW/RED operation classification)
-- Session documentation and state management
-- Systemd timer templates included
+## Workspace Structure
+
+- **Tasks**: [`TASKS.md`](./TASKS.md) and [`tasks/`](./tasks/)
+- **Journal**: [`journal/`](./journal/) - Progress documentation
+- **Knowledge**: [`knowledge/`](./knowledge/) - Technical docs
+- **People**: [`people/`](./people/) - Contact profiles
+- **State**: [`state/`](./state/) - Work queue management
+
+## Communication
+
+- **GitHub**: PRs, issues, code changes (as LLAB-Machina bot)
+- **Telegram**: Via Claw for urgent notifications
+- **Task delegation**: File-based in `/tasks/from-claw/`
 
 ## Forking
 
-Before forking to create a new agent you must update the submodules:
+Before forking:
 
 ```sh
 git submodule update --init --recursive
 ```
 
-and it is recommended to install the `tree` command if you don't have it already:
-
-```sh
-# Debian/Ubuntu
-sudo apt install tree
-
-# macOS
-# Using Homebrew
-brew install tree
-```
-
-You can now create a clean fork of Bengt by running:
+Then:
 
 ```sh
 ./fork.sh <path> [<agent-name>]
 ```
 
-Then simply follow the instructions in the output.
+## Documentation
 
-## Workspace Structure
-
- - Bengt keeps track of tasks in [`TASKS.md`](./TASKS.md)
- - Bengt keeps a journal in [`./journal/`](./journal/)
- - Bengt keeps a knowledge base in [`./knowledge/`](./knowledge/)
- - Bengt maintains profiles of people in [`./people/`](./people/)
- - Bengt manages work priorities in [`./state/`](./state/) using the two-queue system (manual + generated)
- - Bengt uses scripts in [`./scripts/`](./scripts/) for context generation, task management, and automation
- - Bengt can add files to [`gptme.toml`](./gptme.toml) to always include them in their context
-
-### Key Directories
-
-**[`state/`](./state/)**: Work queue management
-- `queue-manual.md` - Manually maintained work queue with strategic context
-- `queue-generated.md` - Auto-generated queue from tasks and GitHub
-- See [`state/README.md`](./state/README.md) for detailed documentation
-
-**[`scripts/`](./scripts/)**: Automation and utilities
-- `context.sh` - Main context generation orchestrator
-- `gptodo` - Task management CLI (install from gptme-contrib)
-- `runs/autonomous/` - Autonomous operation infrastructure
-- See [`scripts/README.md`](./scripts/README.md) for complete documentation
-
-**[`lessons/`](./lessons/)**: Behavioral patterns and constraints
-- Prevents known failure modes through structured guidance
-- See [`lessons/README.md`](./lessons/README.md) for lesson system documentation
+- [`ABOUT.md`](./ABOUT.md) - Bengt's identity and purpose
+- [`ARCHITECTURE.md`](./ARCHITECTURE.md) - Workspace structure
+- [`TASKS.md`](./TASKS.md) - Task management system

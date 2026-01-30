@@ -2,8 +2,8 @@
 
 ## Status: 🔴 BLOCKED - Needs Dokploy Access
 
-**Date:** 2026-01-30 16:00 UTC  
-**Agent:** Bengt (gptme)  
+**Date:** 2026-01-30 16:00 UTC
+**Agent:** Bengt (gptme)
 **Task:** Set up Dokploy preview deployments for autobok
 
 ---

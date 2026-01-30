@@ -1,61 +1,88 @@
 # Work Queue
 
-## Current Run
-Session 2026-01-30: Created autonomous run infrastructure + new tasks for redrawn, wedding-rsvp
+## Current Run - COMPLETE (BLOCKED)
+**Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715  
+**Task:** Set up Dokploy preview deployments for autobok  
+**Status:** 🔴 BLOCKED - Awaiting Dokploy access  
+**Started:** 2026-01-30 15:00 UTC  
+**Completed:** 2026-01-30 16:00 UTC
 
-## Collaboration Setup (IMPORTANT)
+### Summary
+- Research complete: Dokploy preview deployment plan created
+- Implementation guide written: `/tmp/tbrain/tasks/dokploy-preview-implementation-guide.md`
+- **BLOCKER:** No access to Dokploy panel
+- **Action required:** Theodor needs to provide Dokploy URL/credentials or confirm server for installation
 
-**OpenClaw Coordination**:
-- Bengt (gptme) and OpenClaw are collaborators on same Hetzner machine
-- Same GitHub account: theolundqvist
-- **Timing**: OpenClaw runs at XX:00, Bengt runs at XX:30 (30-min offset)
-- **Next Autonomous Run**: Tell OpenClaw about:
-  - New repos: swebuild/redrawn, theolundqvist/wedding-rsvp
-  - Collaboration setup (same machine, same account)
-  - Timing coordination (consider reconfiguring OpenClaw to 60min on XX:00)
+### Deliverables
+- [x] Comprehensive implementation guide
+- [x] Configuration analysis from autobok repo
+- [x] Step-by-step setup instructions
+- [ ] Dokploy access (pending Theodor)
+- [ ] Implementation (pending access)  
 
-## Planned Next
+## Priority Change Notice
+**Date:** 2026-01-30  
+**From:** Claw/Theodor  
+**New Priority:** Dokploy preview deployments (URGENT)  
+**Paused Tasks:** 
+- P0 Bug #3 (date parsing) - has PR #29 ready
+- P0 Bug #5 (receipt linking)  
 
-1. **[Set Up Telegram Notifications]** (0/11 complete, new)
-   - Priority: HIGH
-   - Goal: Configure notification system (OpenClaw API vs Telegram CLI) so Bengt can message Theodor when assistance needed
-   - Next Action: Check OpenClaw config for existing telegram bot token and user ID
-   - Status: Task created, research phase
-   - Timeline: 1-2 hours to implement
-   - Source: [tasks/setup-telegram-notifications.md](tasks/setup-telegram-notifications.md)
+## Dokploy Preview Deployment Plan
 
-2. **[Host Autobok on Hetzner with Dokploy + Sablier]** (0/9 complete, new)
-   - Priority: HIGH
-   - Goal: Deploy autobok on current Hetzner machine using Dokploy, Docker Compose, and Sablier for preview URLs
-   - Next Action: Research Dokploy installation requirements and check server readiness
-   - Status: Task created, ready to start
-   - Timeline: 2-3 hours initial setup
-   - Source: [tasks/host-autobok-dokploy.md](tasks/host-autobok-dokploy.md)
+### Research Summary
+Dokploy preview deployments allow testing PRs in isolated environments before merging.
 
-3. **[Redrawn v2: Complete Rebuild]** (0/19 complete, new)
-   - Priority: HIGH
-   - Goal: Rebuild redrawn from scratch using autobok patterns (Go/Fuego backend, Next.js frontend), create v2 branch
-   - Next Action: Read current redrawn codebase and study autobok architecture patterns
-   - Status: Task created, needs architecture planning
-   - Timeline: Multiple sessions (2-3 days work)
-   - Source: [tasks/redrawn-v2-rebuild.md](tasks/redrawn-v2-rebuild.md)
-   - Note: Use autobok as template, not copy-paste
+**Key Features:**
+- Works with GitHub integration only
+- Auto-creates preview when PR opened to target branch
+- Auto-updates on new commits
+- Auto-cleans up when PR closed/merged
+- Free traefik.me domains (no DNS config needed)
+- Default port: 3000 (configurable)
+- Max 3 preview deployments per app (configurable)
 
-4. **[Explore OpenClaw Integration]** (0/3 complete, new)
-   - Priority: MEDIUM
-   - Goal: Understand existing OpenClaw setup and how to leverage it for agent workflows
-   - Next Action: Examine OpenClaw gateway service and available APIs/hooks
-   - Status: OpenClaw service already installed
-   - Timeline: 30 minutes exploration
-   - Source: System discovery
+### Implementation Steps
 
-5. **[Monitor Wedding RSVP Website]** (0/4 complete, new)
-   - Priority: MEDIUM
-   - Goal: Passive monitoring of wedding-rsvp repo for issues/requests from Theodor/Rebecca
-   - Next Action: Watch repository for new issues
-   - Status: Monitoring mode (no active dev unless requested)
-   - Timeline: Ongoing
-   - Source: [tasks/wedding-rsvp-monitor.md](tasks/wedding-rsvp-monitor.md)
+1. **Check Current Dokploy Setup**
+   - Verify autobok is deployed via Dokploy
+   - Check if GitHub provider is configured
+   - Review current deployment configuration
+
+2. **Configure Preview Deployments**
+   - Enable preview deployments in Dokploy UI
+   - Set target branch (main)
+   - Configure port (web: 3000, api: 8081)
+   - Set domain pattern (traefik.me or custom)
+
+3. **Test with Existing PR**
+   - Use PR #28 or #29 as pilot
+   - Verify preview URL is accessible
+   - Check logs for any issues
+
+4. **Document the Setup**
+   - Add preview deployment info to autobok docs
+   - Share preview URL pattern with Theodor
+
+### Success Criteria
+- [ ] Opening a PR triggers a preview deployment
+- [ ] Preview URL is accessible for testing
+- [ ] Theodor can review changes visually before merge
+
+## Previous Work
+
+### Bug #4 Fix - MERGE READY
+**Problem:** When a transaction date was updated to a different fiscal year, it stayed in the wrong ledger.
+**PR:** https://github.com/theolundqvist/autobok/pull/28
+
+### Bug #3 Fix - READY FOR REVIEW
+**Problem:** Dates like "26.01.17" were interpreted as 2017 instead of 2026
+**PR:** https://github.com/theolundqvist/autobok/pull/29
+
+## Next Steps After Dokploy
+1. Return to P0 Bug #5 (receipt linking) if still open
+2. Merge approved PRs (#28, #29)
+3. Continue with P1 issues
 
 ## Last Updated
-2026-01-30 08:31 UTC
+2026-01-30 15:05 UTC

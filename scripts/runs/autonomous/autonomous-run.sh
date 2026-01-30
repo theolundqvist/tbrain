@@ -17,10 +17,10 @@
 set -e  # Exit on error
 
 # === CONFIGURATION (CUSTOMIZE THESE) ===
-AGENT_NAME="Bengt"  # Your agent's name
-WORKSPACE="/root/tbrain"  # Your workspace path
-REPO_OWNER="theolundqvist"  # Your GitHub username
-REPO_NAME="tbrain"  # Your workspace repo name
+AGENT_NAME="Bengt"  # Replace with your agent's name
+WORKSPACE="/tmp/tbrain"  # Replace with your workspace path
+REPO_OWNER="theolundqvist"  # Replace with your GitHub username
+REPO_NAME="tbrain"  # Replace with your workspace repo name
 SCRIPT_TIMEOUT=3000  # 50 minutes in seconds (allows hourly scheduling with buffer)
 # ========================================
 
