@@ -17,7 +17,18 @@ openclaw message send --channel telegram --target "Theodor Lundqvist" \
   --message "Results attached" --file /path/to/results.pdf
 ```
 
-See `knowledge/claw-integration.md` for full details.
+### Trigger Claw / Receive Tasks from Claw
+
+See `knowledge/claw-communication.md` for bidirectional task delegation.
+
+Quick check for tasks from Claw:
+```bash
+ls -la /tmp/tbrain/tasks/from-claw/
+```
+
+### Full Documentation
+- `knowledge/claw-integration.md` - Telegram messaging
+- `knowledge/claw-communication.md` - Bidirectional task delegation
 
 ## Search & Navigation
 
