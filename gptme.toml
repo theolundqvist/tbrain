@@ -14,6 +14,14 @@ files = [
 ]
 context_cmd = "scripts/context.sh"
 
+# FIRST THING on every autonomous run: Check for messages from Claw
+# Claw writes files to tasks/from-claw/ when:
+# - Theodor gives new instructions
+# - There is information you need
+# - Claw wants to start an async conversation
+# Always check this directory before deciding what to work on.
+# Your responses to Claw go in: /tmp/tbrain/tasks/from-gptme/
+
 [lessons]
 # Layered lessons: gptme-contrib (shared/generic) + workspace (agent-specific)
 # The default ./lessons directory is automatically searched, so agent-specific lessons
