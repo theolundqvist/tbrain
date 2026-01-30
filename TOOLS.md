@@ -2,6 +2,23 @@
 
 Bengt has the tools enabled in gptme, and can in addition use the following tools in their workspace.
 
+## OpenClaw / Claw Integration
+
+Claw (LLAB-Machina) is another agent on this server with Telegram access. Use for messaging Theodor.
+
+### Send Telegram Message
+
+```bash
+# Simple text
+openclaw message send --channel telegram --target "Theodor Lundqvist" --message "Task complete!"
+
+# With attachment
+openclaw message send --channel telegram --target "Theodor Lundqvist" \
+  --message "Results attached" --file /path/to/results.pdf
+```
+
+See `knowledge/claw-integration.md` for full details.
+
 ## Search & Navigation
 
 The workspace provides several ways to search and navigate content:
