@@ -2,6 +2,63 @@
 
 ## Current Run - COMPLETE ✅
 **Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
+**Task:** Hourly Autonomous Run - 22:00 UTC
+**Status:** ✅ COMPLETE
+**Started:** 2026-02-02 22:00 UTC
+**Completed:** 2026-02-02 22:08 UTC
+
+### Work Completed
+**Authorization & Ownership Checks**
+
+Implemented security controls for admin operations and file deletion:
+
+1. **Admin Authorization** (`api/internal/handlers/credits.go`)
+   - Added `isAdmin()` helper method to check user privileges
+   - Admin user IDs configured via `ADMIN_USER_IDS` env var (comma-separated)
+   - All admin endpoints now enforce authorization:
+     - `POST /admin/users/{user_id}/credits` - Add credits to user
+     - `GET /admin/users/{user_id}/credits` - Get user balance
+     - `GET /admin/users/{user_id}/credit-transactions` - Get user transactions
+   - Returns 403 Forbidden for non-admin access
+
+2. **Photo Ownership Verification** (`api/internal/handlers/storage.go`)
+   - Added `GetByStorageKey()` method to PhotoService
+   - Delete endpoint now verifies user owns the photo before allowing deletion
+   - Returns 404 if photo not found, 403 if user doesn't own it
+   - Prevents users from deleting other users' files
+
+3. **Configuration** (`api/internal/config/config.go`)
+   - Added `AdminUserIDs` field to Config struct
+   - Added `getSliceEnv()` helper for parsing comma-separated env vars
+   - Admin IDs loaded from `ADMIN_USER_IDS` environment variable
+
+### Files Modified
+- `api/internal/services/photos.go` - Added GetByStorageKey method
+- `api/internal/handlers/credits.go` - Added admin authorization checks
+- `api/internal/handlers/storage.go` - Added ownership verification
+- `api/internal/config/config.go` - Added AdminUserIDs config
+
+### Deliverables
+- [x] Admin authorization on all admin credit endpoints
+- [x] Photo ownership verification on file deletion
+- [x] Configurable admin user IDs via environment
+- [x] Proper error responses (403 Forbidden, 404 Not Found)
+- [x] Code committed and pushed
+
+### Usage
+Set admin users via environment variable:
+```bash
+ADMIN_USER_IDS="user-id-1,user-id-2,user-id-3"
+```
+
+### Next Steps
+1. Autobok PRs - Tests for PR #29 (blocked on Theodor review)
+2. Redrawn v2 - Clone repo, start Phase 1 (needs GitHub auth)
+
+---
+
+## Previous Run - COMPLETE ✅
+**Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
 **Task:** Hourly Autonomous Run - 21:00 UTC
 **Status:** ✅ COMPLETE
 **Started:** 2026-02-02 21:00 UTC
@@ -293,8 +350,9 @@ Implemented complete credit system for Redrawn:
 7. ~~**Frontend Polish** - Photo viewer, theme application, credit purchase UI~~ ✅ COMPLETE
 8. ~~**Backend Payment Integration** - Stripe/PayPal webhooks for credit purchases~~ ✅ COMPLETE
 9. ~~**Photo Storage** - S3 integration for file uploads~~ ✅ COMPLETE
-10. **Autobok PRs** - Tests for PR #29 (pending Theodor review)
-11. **Redrawn v2** - Clone repo, start Phase 1 research (needs GitHub auth)
+10. ~~**Authorization & Ownership Checks** - Admin auth, photo ownership verification~~ ✅ COMPLETE
+11. **Autobok PRs** - Tests for PR #29 (pending Theodor review)
+12. **Redrawn v2** - Clone repo, start Phase 1 research (needs GitHub auth)
 
 ## Last Updated
 2026-02-02 11:35 UTC
