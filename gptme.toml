@@ -1,6 +1,9 @@
 [agent]
 name = "Bengt"
 
+[chat]
+tool_format = "xml"
+
 [prompt]
 files = [
   "README.md",
