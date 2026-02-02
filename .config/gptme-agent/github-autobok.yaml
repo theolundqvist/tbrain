@@ -1,0 +1,8 @@
+github:
+  enabled: true
+  repo: "theolundqvist/autobok"
+  label: "task-request"
+  workspace_path: "/root/tbrain"
+  poll_interval_seconds: 300
+  priority_labels: ["priority:urgent", "priority:high", "P0", "P1"]
+  exclude_labels: ["wontfix", "duplicate"]
