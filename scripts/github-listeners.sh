@@ -49,21 +49,21 @@ run_listener() {
     local config_file="$1"
     local repo_name="$2"
     local config_path="$CONFIG_DIR/$config_file"
-    
+
     if [ ! -f "$config_path" ]; then
         error "Config not found: $config_path"
         return 1
     fi
-    
+
     log "Starting listener for $repo_name..."
-    
+
     # Run orchestrator for this config
     cd "$GPTMECONTRIB" && uv run python -m gptme_contrib_lib.orchestrator \
         --config "$config_path" \
         2>&1 | while read line; do
             echo "[$repo_name] $line"
         done &
-    
+
     echo $! > "/tmp/github-listener-$repo_name.pid"
     log "Listener for $repo_name started (PID: $(cat /tmp/github-listener-$repo_name.pid))"
 }

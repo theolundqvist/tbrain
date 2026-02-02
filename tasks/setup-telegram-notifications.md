@@ -1,6 +1,7 @@
 ---
-state: new
-created: 2026-01-30T08:21:00+00:00
+state: done
+created: "2026-01-30T08:21:00+00:00"
+completed: "2026-02-02T05:00:00+00:00"
 priority: high
 tags: [infrastructure, notifications, telegram, openclaw]
 ---
@@ -11,12 +12,12 @@ Configure a notification system so Bengt can message Theodor when assistance is 
 
 ## Goals
 
-- [ ] Research and compare notification options (OpenClaw API vs Telegram CLI)
-- [ ] Extract/verify Telegram bot token and user ID
-- [ ] Set up working notification mechanism
-- [ ] Create helper function/script for sending messages
-- [ ] Test end-to-end notification flow
-- [ ] Document usage in knowledge base
+- [x] Research and compare notification options (OpenClaw API vs Telegram CLI)
+- [x] Extract/verify Telegram bot token and user ID
+- [x] Set up working notification mechanism
+- [x] Create helper function/script for sending messages
+- [x] Test end-to-end notification flow
+- [x] Document usage in knowledge base
 
 ## Subtasks
 
@@ -81,5 +82,5 @@ curl -s -X POST "https://api.telegram.org/bot<TOKEN>/sendMessage" \
 
 ## Related
 
-- [OpenClaw Gateway service](/root/.config/systemd/user/openclaw-gateway.service) (already installed)
+- OpenClaw Gateway service (already installed at ~/.config/systemd/user/openclaw-gateway.service)
 - [Lessons on tool usage](/lessons/tools/)

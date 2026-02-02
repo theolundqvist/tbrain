@@ -33,18 +33,18 @@ total_created=0
 for config_pair in "${CONFIGS[@]}"; do
     IFS=':' read -r config_file repo_name <<<"$config_pair"
     config_path="$CONFIG_DIR/$config_file"
-    
+
     if [ ! -f "$config_path" ]; then
         echo "  ⚠️  Config not found: $config_file"
         continue
     fi
-    
+
     log "Checking $repo_name..."
-    
+
     result=$(cd "$GPTMECONTRIB" && uv run python -m gptme_contrib_lib.orchestrator \
         --config "$config_path" \
         --once 2>&1)
-    
+
     if echo "$result" | grep -q "Created [1-9]"; then
         created=$(echo "$result" | grep -oP 'Created \K\d+')
         echo "  ✅ Created $created task(s) from $repo_name"

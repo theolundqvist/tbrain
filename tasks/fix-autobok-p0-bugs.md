@@ -43,7 +43,7 @@ The autobok repo has 27 open issues that need attention. Start with the P0 (crit
 - Files: `create_transaction.go`, `update_transaction.go`
 - Validates transaction dates are not >12 months in the past
 
-### PR #31 - Fiscal Year Fix  
+### PR #31 - Fiscal Year Fix
 - Branch: `fix/p0-fiscal-year-update`
 - Files: `transactions.go`
 - Recomputes ledger assignment when transaction date changes fiscal year

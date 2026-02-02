@@ -93,7 +93,7 @@ To create a task from a GitHub issue:
 **Fix**: Run `gh auth login`
 
 **Issue**: No tasks created
-**Check**: 
+**Check**:
 - Does the issue have the `task-request` label?
 - Is the issue open (not closed)?
 - Check logs in listener output
