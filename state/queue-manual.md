@@ -2,6 +2,72 @@
 
 ## Current Run - COMPLETE ✅
 **Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
+**Task:** Hourly Autonomous Run - 21:00 UTC
+**Status:** ✅ COMPLETE
+**Started:** 2026-02-02 21:00 UTC
+**Completed:** 2026-02-02 21:25 UTC
+
+### Work Completed
+**S3-Compatible Storage Service with Presigned URLs**
+
+Implemented complete file storage system for Redrawn using AWS SDK v2:
+
+1. **Storage Service** (`api/internal/services/storage.go`)
+   - S3-compatible storage (MinIO, R2, AWS S3)
+   - Presigned upload URLs (15-minute expiry)
+   - Presigned download URLs (1-hour expiry)
+   - File deletion capability
+   - Auto bucket creation with public read policy
+   - Support for files up to 100MB
+
+2. **Storage Handler** (`api/internal/handlers/storage.go`)
+   - `POST /storage/upload-url` - Get presigned URL for direct upload
+   - `POST /storage/download-url` - Get presigned URL for download
+   - `DELETE /storage/{storageKey}` - Delete file from storage
+   - JWT authentication on all endpoints
+
+3. **Frontend Integration** (`web/src/services/api.ts`)
+   - `useGetUploadURLMutation` - Get upload URL hook
+   - `useGetDownloadURLMutation` - Get download URL hook
+   - `useDeleteFileMutation` - Delete file hook
+   - Full TypeScript types for all storage operations
+
+4. **Integration**
+   - StorageService added to app context
+   - Routes registered in main.go
+   - AWS SDK v2 dependencies added to go.mod
+   - Compatible with MinIO (local dev) and R2/S3 (production)
+
+### Files Created/Modified
+- `api/internal/services/storage.go` (new, 203 lines)
+- `api/internal/handlers/storage.go` (new, 148 lines)
+- `api/internal/app/app.go` (updated - added StorageService)
+- `api/cmd/api/main.go` (updated - registered storage routes)
+- `api/go.mod` (updated - added AWS SDK v2 dependencies)
+- `web/src/services/api.ts` (updated - added storage hooks)
+
+### Deliverables
+- [x] S3-compatible storage service
+- [x] Presigned upload URLs for direct browser→S3 uploads
+- [x] Presigned download URLs for secure file access
+- [x] File deletion endpoint
+- [x] Frontend RTK Query integration
+- [x] Auto bucket creation on startup
+- [x] Committed and pushed to origin/master
+
+### Next Steps for Theodor
+1. Configure storage environment variables:
+   - `STORAGE_ENDPOINT` (e.g., `localhost:9000` for MinIO)
+   - `STORAGE_ACCESS_KEY` and `STORAGE_SECRET_KEY`
+   - `STORAGE_BUCKET` (default: `redrawn`)
+   - `STORAGE_USE_SSL` (false for local, true for production)
+2. For production: Use Cloudflare R2 or AWS S3
+3. Update photo upload flow to use presigned URLs
+
+---
+
+## Previous Run - COMPLETE ✅
+**Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
 **Task:** Hourly Autonomous Run - 18:00 UTC
 **Status:** ✅ COMPLETE
 **Started:** 2026-02-02 18:00 UTC
@@ -226,7 +292,7 @@ Implemented complete credit system for Redrawn:
 6. ~~**Frontend Album Pages** - Album list, detail, create, upload~~ ✅ COMPLETE
 7. ~~**Frontend Polish** - Photo viewer, theme application, credit purchase UI~~ ✅ COMPLETE
 8. ~~**Backend Payment Integration** - Stripe/PayPal webhooks for credit purchases~~ ✅ COMPLETE
-9. **Photo Storage** - S3 integration for file uploads
+9. ~~**Photo Storage** - S3 integration for file uploads~~ ✅ COMPLETE
 10. **Autobok PRs** - Tests for PR #29 (pending Theodor review)
 11. **Redrawn v2** - Clone repo, start Phase 1 research (needs GitHub auth)
 
