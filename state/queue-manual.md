@@ -2,6 +2,67 @@
 
 ## Current Run - COMPLETE ✅
 **Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
+**Task:** Hourly Autonomous Run - 11:00 UTC
+**Status:** ✅ COMPLETE
+**Started:** 2026-02-02 11:00 UTC
+**Completed:** 2026-02-02 11:35 UTC
+
+### Work Completed
+**Frontend Polish: Credit Purchase & Theme Application**
+
+Built out complete user flows for credits and theme application:
+
+1. **Credit Purchase Flow** (`web/pages/credits/`)
+   - `/credits` - Full purchase page with 3 credit packages (10/50/200)
+   - Package selection with pricing and per-credit cost
+   - Payment method selection (Stripe/PayPal)
+   - Recent transaction history display
+   - Current balance widget
+   - `/credits/success` - Post-purchase confirmation page
+
+2. **Theme Application Wizard** (`web/pages/themes/apply.tsx`)
+   - 3-step flow: Select Theme → Choose Photos → Review & Generate
+   - Album selector with photo grid
+   - Multi-photo selection with visual indicators
+   - Credit cost calculation and balance check
+   - Query param support for pre-selected theme/photo
+
+3. **API Integration**
+   - Added `purchaseCredits` mutation
+   - Added generated photos endpoints (list, create)
+   - Added `GeneratedPhoto` tag for cache invalidation
+   - Wired up all buttons (Buy Credits, Use Theme)
+
+4. **Build Verification**
+   - TypeScript compilation: ✓ No errors
+   - Next.js build: ✓ 14 pages generated successfully
+
+### Files Created/Modified
+- `web/pages/credits/index.tsx` (new, 296 lines)
+- `web/pages/credits/success.tsx` (new, 52 lines)
+- `web/pages/themes/apply.tsx` (new, 366 lines)
+- `web/pages/dashboard.tsx` (updated - Buy Credits link)
+- `web/pages/themes/index.tsx` (updated - Use Theme handler)
+- `web/src/components/PhotoViewer.tsx` (updated - Apply theme link)
+- `web/src/services/api.ts` (updated - new endpoints & types)
+- `web/src/services/emptyApi.ts` (updated - GeneratedPhoto tag)
+
+### Deliverables
+- [x] Credit purchase page with packages
+- [x] Payment method selection UI
+- [x] Transaction history on credits page
+- [x] Theme application 3-step wizard
+- [x] Photo selection with multi-select
+- [x] Credit balance checking before generation
+- [x] Generated photos API hooks
+- [x] All buttons wired up
+- [x] Build passes (14 pages)
+- [x] Committed and pushed to origin/master
+
+---
+
+## Previous Run - COMPLETE ✅
+**Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
 **Task:** Hourly Autonomous Run - 05:00 UTC
 **Status:** ✅ COMPLETE
 **Started:** 2026-02-02 05:00 UTC
@@ -27,7 +88,7 @@
 
 ## Previous Run - COMPLETE ✅
 **Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
-**Task:** Hourly Autonomous Run - Status Check
+**Task:** Hourly Autonomous Run - 01:00 UTC
 **Status:** ✅ COMPLETE - All systems checked, no actionable work
 **Started:** 2026-02-02 01:00 UTC
 **Completed:** 2026-02-02 01:08 UTC
@@ -107,22 +168,54 @@ Implemented complete credit system for Redrawn:
 3. ~~**Credit Service** - Balance management, transaction history~~ ✅ COMPLETE
 4. ~~**Frontend RTK Query** - Generate API client from OpenAPI~~ ✅ COMPLETE (already done)
 5. ~~**Telegram Notifications** - Set up agent→Theodor messaging~~ ✅ COMPLETE
-6. **Autobok PRs** - Tests for PR #29 (pending Theodor review)
-7. **Redrawn v2** - Clone repo, start Phase 1 research (needs GitHub auth)
+6. ~~**Frontend Album Pages** - Album list, detail, create, upload~~ ✅ COMPLETE
+7. ~~**Frontend Polish** - Photo viewer, theme application, credit purchase UI~~ ✅ COMPLETE
+8. **Backend Payment Integration** - Stripe/PayPal webhooks for credit purchases
+9. **Photo Storage** - S3 integration for file uploads
+10. **Autobok PRs** - Tests for PR #29 (pending Theodor review)
+11. **Redrawn v2** - Clone repo, start Phase 1 research (needs GitHub auth)
 
 ## Last Updated
-2026-02-02 01:08 UTC
+2026-02-02 11:35 UTC
 
 ---
 
 ## Notes
 
-### 2026-02-02 01:00 UTC - Hourly Run
-- All 6 autobok PRs unchanged - still BLOCKED on Theodor's review
-- **Committed:** Pending documentation updates (queue, task status, github listener configs)
-- **Pushed:** Changes to origin/main
-- **No new GitHub activity** since 00:00 UTC
-- **PR #31 bug fix confirmed** (ledgerID→targetLedgerID fixed 2026-02-01 01:02 UTC)
-- **No response from gptme** on collaboration workflow
-- **No urgent issues** on any repo
-- **Status:** Nothing actionable - all main tasks blocked on Theodor approval/input
+### 2026-02-02 11:00 UTC - Hourly Run
+Frontend polish completed:
+- Credit purchase flow (packages, payment methods, history)
+- Theme application wizard (3-step: theme → photos → generate)
+- Generated photos API integration
+- All buttons now functional
+- 14 pages building successfully
+- 714 lines added across 8 files
+- Committed and pushed
+
+Redrawn v2 now has:
+✅ Complete backend (services + handlers)
+✅ Complete frontend (pages, components, API integration)
+✅ Credit purchase UI
+✅ Theme application flow
+⏳ Payment backend (Stripe webhooks)
+⏳ S3/file storage
+⏳ Actual AI generation worker
+
+### 2026-02-02 07:00 UTC - Hourly Run
+Major frontend implementation completed:
+- All album pages built and functional
+- Photo upload with drag-and-drop
+- Dashboard with stats and quick actions
+- Themes page with grid layout
+- RTK Query API with full type safety
+- 1476 lines added across 9 files
+- Committed and pushed to origin/master
+
+Redrawn v2 now has:
+✅ Complete backend (services + handlers)
+✅ Complete frontend shell (pages + components)
+✅ RTK Query integration
+⏳ Photo viewing/modal
+⏳ Theme application flow
+⏳ Credit purchase integration
+⏳ S3/file storage setup
