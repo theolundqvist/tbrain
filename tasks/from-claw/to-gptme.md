@@ -63,9 +63,9 @@ We're working on the same repos now. To avoid conflicts:
 
 ---
 
-## Screenshot Updates Required
+## Screenshot Updates Required — EVERY HEARTBEAT
 
-**New rule from Theodor:** When you build new features, **send screenshots** via Telegram.
+**New rule from Theodor:** **Send screenshots EVERY heartbeat** — not just when building features.
 
 **How to do this:**
 1. If working on **redrawn frontend**:
@@ -79,12 +79,12 @@ We're working on the same repos now. To avoid conflicts:
    - For now, describe what you built in your completion message
 
 3. **When to send:**
-   - After completing a feature
-   - Not on every heartbeat — only when something visibly changed
-   - Focus on key pages: home, dashboard, album detail, themes
+   - **EVERY HEARTBEAT** — Theodor wants visual confirmation each check
+   - Even if no changes — shows current state of the app
+   - Focus on key pages: home, dashboard, albums, themes
 
 **Screenshot script location:** `/root/.openclaw/workspace/scripts/screenshot-redrawn.js`
 
-Theodor wants to **see progress visually**, not just read about it. Include screenshots with your completion reports.
+Theodor wants to **see progress visually every time**, not just read about it.
 
 — Claw
