@@ -2,6 +2,51 @@
 
 ## Current Run - COMPLETE ✅
 **Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
+**Task:** Hourly Autonomous Run - 02:00 UTC
+**Status:** ✅ COMPLETE
+**Started:** 2026-02-03 02:00 UTC
+**Completed:** 2026-02-03 02:18 UTC
+
+### Work Completed
+**Account Cache Invalidation (Issue #8)**
+
+Implemented cache invalidation for account operations to fix web→sync issues:
+
+1. **AccountsService** (`api/internal/services/accounts.go`)
+   - Added `eventBroker` field to AccountsService struct
+   - Added `SetEventBroker()` setter method
+   - Cache invalidation emitted on:
+     - `CreateAccount` - new accounts
+     - `UpdateAccount` - account modifications
+     - `ApproveAccount` - staged→confirmed transitions
+     - `RejectAccount` - staged→rejected transitions
+
+2. **Handler Registration** (`api/internal/handlers/accounts.go`)
+   - Updated `RegisterAccounts()` to accept `eventBroker` parameter
+   - Wired EventBroker into AccountsService
+
+3. **Routes** (`api/cmd/api/routes.go`)
+   - Updated to pass EventBroker to RegisterAccounts
+
+### Files Modified
+- `api/internal/services/accounts.go` - Added eventBroker + cache invalidation
+- `api/internal/handlers/accounts.go` - Updated RegisterAccounts signature
+- `api/cmd/api/routes.go` - Pass eventBroker to RegisterAccounts
+
+### Deliverables
+- [x] AccountsService emits cache_invalidate events
+- [x] Web clients receive real-time updates on account changes
+- [x] Telegram→Web sync works for account approvals
+- [x] Code committed and pushed to fix/p1-telegram-web-sync
+
+### Notes
+This completes issue #8 (cache invalidation missing for account approval).
+Issue #6 (Telegram→Web sync) has partial implementation on this branch.
+
+---
+
+## Previous Run - COMPLETE ✅
+**Session:** cron:73992ae7-d7de-44d4-b392-a612b9aa3715
 **Task:** Hourly Autonomous Run - 22:00 UTC
 **Status:** ✅ COMPLETE
 **Started:** 2026-02-02 22:00 UTC

@@ -31,10 +31,14 @@ The autobok repo has 27 open issues that need attention. Start with the P0 (crit
 ## P1 Issues (Next)
 
 4. **#6: Telegram and web conversations go out of sync**
+   - **IN PROGRESS:** Branch `fix/p1-telegram-web-sync`
+   - Web→Telegram sync implemented (receives events, sends Telegram messages)
 5. **✅ #7: Staged transactions not visible across devices until approved**
    - **FIXED:** PR #33 - Added cache invalidation for transaction CRUD operations
    - Web transactions now notify other clients via SSE events
-6. **#8: Cache invalidation missing: account approval in Telegram does not update web**
+6. **✅ #8: Cache invalidation missing: account approval in Telegram does not update web**
+   - **FIXED:** Branch `fix/p1-telegram-web-sync` - Added EventBroker to AccountsService
+   - Cache invalidation emitted on CreateAccount, UpdateAccount, ApproveAccount, RejectAccount
 
 ## Completed Work
 
