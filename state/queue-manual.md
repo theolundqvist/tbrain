@@ -437,8 +437,15 @@ Implemented complete credit system for Redrawn:
 8. ~~**Backend Payment Integration** - Stripe/PayPal webhooks for credit purchases~~ ✅ COMPLETE
 9. ~~**Photo Storage** - S3 integration for file uploads~~ ✅ COMPLETE
 10. ~~**Authorization & Ownership Checks** - Admin auth, photo ownership verification~~ ✅ COMPLETE
-11. **Autobok PRs** - Tests for PR #29 (pending Theodor review)
-12. **Redrawn v2** - Clone repo, start Phase 1 research (needs GitHub auth)
+11. ~~**Autobok PRs** - Tests for PR #29~~ ⏸️ BLOCKED on Theodor review (#29, #31, #32, #33, #28, #30)
+12. ~~**Redrawn v2** - Clone repo, start Phase 1~~ ✅ COMPLETE (already implemented)
+
+## Current Blockers (as of 04:00 UTC)
+
+**All coordinated projects feature-complete.** Awaiting Theodor direction on:
+- New features for obsidiancollab (permissions system? multi-server?)
+- New features for redrawn (AI generation worker? public sharing?)
+- Autobok PR reviews (#29, #31, #32, #33, #28, #30)
 
 ## Last Updated
 2026-02-02 11:35 UTC
